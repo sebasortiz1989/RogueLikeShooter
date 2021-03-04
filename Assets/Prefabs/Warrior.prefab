@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 2479877493435221632}
   - component: {fileID: 2479877493435221633}
   - component: {fileID: 345280324}
+  - component: {fileID: -777229496246753141}
   m_Layer: 2
   m_Name: Warrior
   m_TagString: Enemy
@@ -231,3 +232,38 @@ MonoBehaviour:
   - {fileID: 7000904903027721705, guid: c13a6937d9dc36548bd8da1e3d9df342, type: 3}
   - {fileID: 7000904903027721705, guid: c13a6937d9dc36548bd8da1e3d9df342, type: 3}
   - {fileID: 7000904903027721705, guid: c13a6937d9dc36548bd8da1e3d9df342, type: 3}
+--- !u!114 &-777229496246753141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2479877493435221641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e93a662ed02e006488256bae351070ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackSounds:
+  - {fileID: 8300000, guid: a76e09fcbb8e3df48b6924924afb09c5, type: 3}
+  - {fileID: 8300000, guid: 328409aae0913f54d8814ccafe5351b2, type: 3}
+  - {fileID: 8300000, guid: 5ad427e0a9aecc64186ec6698f89d885, type: 3}
+  - {fileID: 8300000, guid: 038e746e5babd884da7043ac23798800, type: 3}
+  - {fileID: 8300000, guid: cbd5094c18ab0c3499e6b08a54038d0d, type: 3}
+  - {fileID: 8300000, guid: 14da6f5a7cba05449bc528c9b00531cf, type: 3}
+  - {fileID: 8300000, guid: 25d8a6646b4edd7448560601286154f6, type: 3}
+  - {fileID: 8300000, guid: ab2f4d4e003e01f45884f4911a1f23c5, type: 3}
+  - {fileID: 8300000, guid: 762412f6fe1566f45b0adc07e19eb17c, type: 3}
+  - {fileID: 8300000, guid: 87cc1c2fb762eeb4fa180b732d570a7c, type: 3}
+  deathSounds:
+  - {fileID: 8300000, guid: 88cc1a87c7c6f8d4c89ade80880f56bb, type: 3}
+  - {fileID: 8300000, guid: 9353597784bea5d4dad6189c18184915, type: 3}
+  - {fileID: 8300000, guid: 7541e1c5de9f65849936aa43e19aa819, type: 3}
+  - {fileID: 8300000, guid: 0e9cb089ae7afc5469f5facc1f9d8eea, type: 3}
+  - {fileID: 8300000, guid: 2686c06fb6b77d64ea163acb455c77b0, type: 3}
+  - {fileID: 8300000, guid: 104a3aa9128013a4c979e89b3f21f731, type: 3}
+  - {fileID: 8300000, guid: 0ef586ebc9cdaab4da987b90590d852d, type: 3}
+  - {fileID: 8300000, guid: dc73a42ca56d1824b85f606c545590d7, type: 3}
+  - {fileID: 8300000, guid: 9bba358ac2f3fb449bde098be6eea1ed, type: 3}
+  - {fileID: 8300000, guid: a7067819cd87b114fae68858f217e947, type: 3}
+  - {fileID: 8300000, guid: ab4f64e05145cac4086dbcc178cb861a, type: 3}
