@@ -26,13 +26,6 @@ public class ProceduralMapRightBorder : MonoBehaviour
             mapGen.currentStandingMap = transform.parent.position;
             mapReference.SetActive(false);
 
-            // Left Side
-            hit = Physics2D.Raycast(mapGen.currentStandingMap, leftSide, mapGen.mapXSize);
-            if (hit.transform == null)
-            {
-                mapGen.GenerateLeftMap();
-            }
-
             // Down Side
             hit = Physics2D.Raycast(mapGen.currentStandingMap, downSide, mapGen.mapYSize);
             if (hit.transform == null)
@@ -41,6 +34,29 @@ public class ProceduralMapRightBorder : MonoBehaviour
             }
 
             // Up Side
+            hit = Physics2D.Raycast(mapGen.currentStandingMap, upSide, mapGen.mapYSize);
+            if (hit.transform == null)
+            {
+                mapGen.GenerateUpMap();
+            }
+
+            // Left Side
+            hit = Physics2D.Raycast(mapGen.currentStandingMap, leftSide, mapGen.mapXSize);
+            if (hit.transform == null)
+            {
+                mapGen.GenerateLeftMap();
+            }
+
+            mapGen.currentStandingMap = hit.transform.position;
+
+            // Down Left Side
+            hit = Physics2D.Raycast(mapGen.currentStandingMap, downSide, mapGen.mapYSize);
+            if (hit.transform == null)
+            {
+                mapGen.GenerateDownMap();
+            }
+
+            // Up Left Side
             hit = Physics2D.Raycast(mapGen.currentStandingMap, upSide, mapGen.mapYSize);
             if (hit.transform == null)
             {

@@ -47,6 +47,22 @@ public class ProceduralMapUpBorder : MonoBehaviour
                 mapGen.GenerateDownMap();
             }
 
+            mapGen.currentStandingMap = hit.transform.position;
+
+            // Right Down Side
+            hit = Physics2D.Raycast(mapGen.currentStandingMap, rightSide, mapGen.mapXSize);
+            if (hit.transform == null)
+            {
+                mapGen.GenerateRightMap();
+            }
+
+            // Left Down Side
+            hit = Physics2D.Raycast(mapGen.currentStandingMap, leftSide, mapGen.mapXSize);
+            if (hit.transform == null)
+            {
+                mapGen.GenerateLeftMap();
+            }
+
             mapReference.SetActive(true);
         }
     }
