@@ -12,6 +12,7 @@ public class ProceduralMapGeneration : MonoBehaviour
     Vector2 leftSide = new Vector2(-1, 0);
     Vector2 upSide = new Vector2(0, 1);
     Vector2 downSide = new Vector2(0, -1);
+    GameObject mapCloneCorners;
 
     // Public Variables
     public GameObject mapsParent;
@@ -41,6 +42,15 @@ public class ProceduralMapGeneration : MonoBehaviour
             GameObject mapClone = Instantiate(maps[Random.Range(0, maps.Length)], (Vector3)side, Quaternion.identity);
             mapClone.transform.parent = mapsParent.transform;
         }
+
+        mapCloneCorners = Instantiate(maps[Random.Range(0, maps.Length)], (Vector3)rightSide + (Vector3)upSide, Quaternion.identity);
+        mapCloneCorners.transform.parent = mapsParent.transform;
+        mapCloneCorners = Instantiate(maps[Random.Range(0, maps.Length)], (Vector3)rightSide + (Vector3)downSide, Quaternion.identity);
+        mapCloneCorners.transform.parent = mapsParent.transform;
+        mapCloneCorners = Instantiate(maps[Random.Range(0, maps.Length)], (Vector3)leftSide + (Vector3)upSide, Quaternion.identity);
+        mapCloneCorners.transform.parent = mapsParent.transform;
+        mapCloneCorners = Instantiate(maps[Random.Range(0, maps.Length)], (Vector3)leftSide + (Vector3)downSide, Quaternion.identity);
+        mapCloneCorners.transform.parent = mapsParent.transform;
     }
 
     public void GenerateUpMap()

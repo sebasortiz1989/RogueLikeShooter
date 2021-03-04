@@ -47,17 +47,18 @@ public class ProceduralMapLeftBorder : MonoBehaviour
                 mapGen.GenerateRightMap();
             }
 
+            hit = Physics2D.Raycast(mapGen.currentStandingMap, rightSide, mapGen.mapXSize);
             mapGen.currentStandingMap = hit.transform.position;
 
             // Down Right Side
-            hit = Physics2D.Raycast(mapGen.currentStandingMap, downSide, mapGen.mapYSize);
+            hit = Physics2D.Raycast(mapGen.currentStandingMap - new Vector3(0, 1, 0), downSide, mapGen.mapYSize - 1);
             if (hit.transform == null)
             {
                 mapGen.GenerateDownMap();
             }
 
             // Up Right Side
-            hit = Physics2D.Raycast(mapGen.currentStandingMap, upSide, mapGen.mapYSize);
+            hit = Physics2D.Raycast(mapGen.currentStandingMap + new Vector3(0, 1, 0), upSide, mapGen.mapYSize - 1);
             if (hit.transform == null)
             {
                 mapGen.GenerateUpMap();
