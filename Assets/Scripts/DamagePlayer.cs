@@ -6,7 +6,7 @@ public class DamagePlayer : MonoBehaviour
 {
     // Config
     [SerializeField] GameObject damageNumber;
-    public int damage = 10;
+    public int damage;
 
     // Cached component references
     GameObject player;
@@ -24,6 +24,12 @@ public class DamagePlayer : MonoBehaviour
     // String const
     private const string PLAYER_HIT = "playerHit";
     private const string IS_ATTACKING = "isAttacking";
+    private const string ENEMYDAMAGE = "EnemyDamage";
+
+    private void Awake()
+    {
+        damage = PlayerPrefs.GetInt(ENEMYDAMAGE);
+    }
 
     // Start is called before the first frame update
     private void Start()

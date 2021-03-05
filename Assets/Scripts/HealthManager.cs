@@ -5,7 +5,7 @@ using UnityEngine;
 public class HealthManager : MonoBehaviour
 {
     // Config
-    [SerializeField] int maxHealth = 100;
+    int maxHealth;
 
     // Initialize variables
     private int currentHealth;
@@ -14,6 +14,20 @@ public class HealthManager : MonoBehaviour
     // String const
     private const string WILL_DIE_TRIGGER = "willDieTrigger";
     private const string WILL_DIE = "willDie";
+    private const string PLAYERHP = "PlayerHP";
+    private const string ENEMYHP = "EnemyHP";
+
+    private void Awake()
+    {
+        if (this.CompareTag("Player"))
+        {
+            maxHealth = PlayerPrefs.GetInt(PLAYERHP);
+        }
+        if (this.CompareTag("Enemy"))
+        {
+            maxHealth = PlayerPrefs.GetInt(ENEMYHP);
+        }
+    }
 
     // Start is called before the first frame update
     private void Start()

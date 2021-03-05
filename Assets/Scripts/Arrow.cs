@@ -6,13 +6,23 @@ public class Arrow : MonoBehaviour
 {
     // Config
     [Range(10f, 15f)] [SerializeField] float currentSpeed = 10f;
-    [Range(0f, 100f)] [SerializeField] int critChance = 20;
-    [SerializeField] int damage = 10;
     [SerializeField] GameObject damageNumber;
     [SerializeField] GameObject damageNumberCrit;
 
     // Initialize variables
     int damageDone;
+    int critChance;
+    public int damage;
+
+    // String const
+    private const string PLAYERDAMAGE = "PlayerDamage";
+    private const string CRITCHANCE = "CriticalChance";
+
+    private void Awake()
+    {
+        damage = PlayerPrefs.GetInt(PLAYERDAMAGE);
+        critChance = PlayerPrefs.GetInt(CRITCHANCE);
+    }
 
     // Start is called before the first frame update
     private void Start()
@@ -62,6 +72,12 @@ public class Arrow : MonoBehaviour
         catch { return; }
     }
 
-    public void UpdateDamage(int newDamage){damage = newDamage;}
-    public void UpdateCritChance(int newCrit) { critChance = newCrit; }
+    public void UpdateDamage(int newDamage)
+    {
+        damage = newDamage;
+    }
+    public void UpdateCritChance(int newCrit) 
+    { 
+        critChance = newCrit; 
+    }
 }
