@@ -49,6 +49,11 @@ public class SceneManagement : MonoBehaviour
         SceneManager.LoadScene(currentSceneIndex + 1);
     }
 
+    public void LoadPreviousScene()
+    {
+        SceneManager.LoadScene(currentSceneIndex - 1);
+    }
+
     public void RestartLevel()
     {
         Time.timeScale = 1f;
@@ -59,7 +64,6 @@ public class SceneManagement : MonoBehaviour
     {
         SceneManager.LoadScene("XGameOverScreen");
     }
-
 
 
     public void QuitGame()
