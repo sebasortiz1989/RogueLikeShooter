@@ -75,4 +75,16 @@ public class CharacterStats : MonoBehaviour
         PlayerPrefs.SetInt(ENEMYDAMAGE, 10);
         statsSet = true;
     }
+
+    public void DefaultStatsStart()
+    {
+        PlayerPrefs.SetInt(PLAYERHP, 100);
+        PlayerPrefs.SetFloat(RUNNINGSPEED, 5f);
+        PlayerPrefs.SetInt(PLAYERDAMAGE, 10);
+        PlayerPrefs.SetFloat(ATTACKSPEED, 1f);
+        PlayerPrefs.SetInt(CRITCHANCE, 20);
+        PlayerPrefs.SetInt(ENEMYHP, 100);
+        PlayerPrefs.SetInt(ENEMYDAMAGE, 10);
+        statsSet = true;
+    }
 }
