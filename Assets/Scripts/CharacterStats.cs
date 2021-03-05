@@ -23,6 +23,28 @@ public class CharacterStats : MonoBehaviour
     private const string ENEMYHP = "EnemyHP";
     private const string ENEMYDAMAGE = "EnemyDamage";
 
+    // Initialize Variables
+    private static bool statsSet;
+
+    private void Start()
+    {
+        if (statsSet)
+        {
+            GetCurrentvalues();
+        }
+    }
+
+    private void GetCurrentvalues()
+    {
+        playerHPBar.value = PlayerPrefs.GetInt(PLAYERHP);
+        runningSpeedBar.value = PlayerPrefs.GetFloat(RUNNINGSPEED);
+        playerDamageBar.value = PlayerPrefs.GetInt(PLAYERDAMAGE);
+        attackSpeedBar.value = PlayerPrefs.GetFloat(ATTACKSPEED);
+        critChanceBar.value = PlayerPrefs.GetInt(CRITCHANCE);
+        enemyHPBar.value = PlayerPrefs.GetInt(ENEMYHP);
+        enemyDamageBar.value = PlayerPrefs.GetInt(ENEMYDAMAGE);
+    }
+
     public void DefaultStats()
     {
         PlayerPrefs.SetInt(PLAYERHP, 100);
@@ -51,5 +73,6 @@ public class CharacterStats : MonoBehaviour
         PlayerPrefs.SetInt(CRITCHANCE, (int)critChanceBar.value);
         PlayerPrefs.SetInt(ENEMYHP, 100);
         PlayerPrefs.SetInt(ENEMYDAMAGE, 10);
+        statsSet = true;
     }
 }
