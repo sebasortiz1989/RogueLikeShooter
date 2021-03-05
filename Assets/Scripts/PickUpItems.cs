@@ -8,6 +8,7 @@ public class PickUpItems : MonoBehaviour
     // Config
     [SerializeField] int healedAmountPotion;
     [SerializeField] int value;
+    [SerializeField] AudioClip coinSound;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -26,6 +27,7 @@ public class PickUpItems : MonoBehaviour
             }
             if (gameObject.CompareTag("Coin"))
             {
+                AudioSource.PlayClipAtPoint(coinSound, FindObjectOfType<CameraFollow>().transform.position);
                 CoinManager.sharedInstance.AddMoney(value);
                 Destroy(gameObject);
             }

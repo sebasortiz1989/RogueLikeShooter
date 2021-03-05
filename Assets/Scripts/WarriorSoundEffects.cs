@@ -11,12 +11,12 @@ public class WarriorSoundEffects : MonoBehaviour
     public void PlayAttackSound()
     {
         AudioClip clip = attackSounds[Random.Range(0, attackSounds.Length)];
-        AudioSource.PlayClipAtPoint(clip, transform.position);
+        AudioSource.PlayClipAtPoint(clip, FindObjectOfType<CameraFollow>().transform.position);
     }
 
     public void PlayDeathSound()
     {
         AudioClip clip = deathSounds[Random.Range(0, attackSounds.Length)];
-        AudioSource.PlayClipAtPoint(clip, transform.position);
+        AudioSource.PlayClipAtPoint(clip, FindObjectOfType<CameraFollow>().transform.position);
     }
 }

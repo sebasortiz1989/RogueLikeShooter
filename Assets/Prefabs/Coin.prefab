@@ -118,6 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healedAmountPotion: 20
   value: 1
+  coinSound: {fileID: 8300000, guid: 913f2f43ce8168c4997feb3955e75f07, type: 3}
 --- !u!58 &2444710229255741137
 CircleCollider2D:
   m_ObjectHideFlags: 0
