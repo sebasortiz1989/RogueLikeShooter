@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7000904903027721705}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.7316217, y: -0.33, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -98,6 +98,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healedAmountPotion: 20
   value: 1
+  coinSound: {fileID: 8300000, guid: 913f2f43ce8168c4997feb3955e75f07, type: 3}
+  potionSound: {fileID: 8300000, guid: 485d18d754fb6954b94f47e9e155e019, type: 3}
 --- !u!58 &7000904903027721698
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class PickUpItems : MonoBehaviour
     [SerializeField] int healedAmountPotion;
     [SerializeField] int value;
     [SerializeField] AudioClip coinSound;
+    [SerializeField] AudioClip potionSound;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,6 +20,7 @@ public class PickUpItems : MonoBehaviour
                 HealthManager health = collision.GetComponent<HealthManager>();
                 if (health.GetCurrentHealth() < health.GetMaxHealth())
                 {
+                    AudioSource.PlayClipAtPoint(potionSound, FindObjectOfType<CameraFollow>().transform.position);
                     health.HealCharacter(healedAmountPotion);
                     Destroy(gameObject);
                 }
