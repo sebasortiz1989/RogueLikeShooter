@@ -133,7 +133,15 @@ public class ArcherPlayerController : MonoBehaviour
         mySprite.enabled = false;
         myCollider.enabled = false;
         Destroy(gameObject);
+        StartCoroutine(LoadGameOver());
     }
+
+    IEnumerator LoadGameOver()
+    {
+        yield return new WaitForSeconds(3f);
+        FindObjectOfType<SceneManagement>().LoadGameOver();
+    }
+
     public void PlayerFalling()
     {
         isAlive = false;
@@ -152,6 +160,4 @@ public class ArcherPlayerController : MonoBehaviour
     { 
         attackSpeed = newAttackSpeed; 
     }
-
-
 }
