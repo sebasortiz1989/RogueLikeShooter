@@ -6,10 +6,8 @@ public class ArcherPlayerController : MonoBehaviour
 {
     // Config
     [SerializeField] Camera cameraX;
-    [SerializeField] float runSpeed = 5f;
     [SerializeField] Transform aim;
     [SerializeField] GameObject arrow;
-    [Range(0f, 2f)] [SerializeField] float attackSpeed;
 
     // State
     public bool isAlive = true;
@@ -25,18 +23,29 @@ public class ArcherPlayerController : MonoBehaviour
     private const string VERTICAL = "Vertical";
     private const string WALKING_STATE = "isWalking";
     private const string ATTACKING_STATE = "isAttacking";
-    private const string ATTACKING_SPEED = "AttackSpeed";
-    private const string IS_ALIVE = "isAlive";
+    private const string ATTACKING_SPEED_ANIM = "attackingSpeed";
+    private const string ATTACKSPEED = "AttackSpeed";
+    private const string RUNNINGSPEED = "RunningSpeed";
 
     // Initialize variables
+    float runSpeed;
+    float attackSpeed;
     float xDirection;
     float yDirection;
-    Vector2 playerVelocity;
-    Vector2 facingDirection;
     bool playerIsWalking;
     bool arrowReady = true;
+    Vector2 playerVelocity;
+    Vector2 facingDirection;
     GameObject arrowShot;
+
+    // Public variables
     public static bool playerCreated;
+
+    private void Awake()
+    {
+        runSpeed = PlayerPrefs.GetFloat(RUNNINGSPEED);
+        attackSpeed = PlayerPrefs.GetFloat(ATTACKSPEED);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +54,7 @@ public class ArcherPlayerController : MonoBehaviour
         myAnimator = GetComponent<Animator>();
         mySprite = GetComponent<SpriteRenderer>();
         myCollider = GetComponent<CapsuleCollider2D>();
-        myAnimator.SetFloat(ATTACKING_SPEED, attackSpeed);
+        myAnimator.SetFloat(ATTACKING_SPEED_ANIM, attackSpeed);
     }
 
     // Update is called once per frame
@@ -85,7 +94,6 @@ public class ArcherPlayerController : MonoBehaviour
         else
             Invoke("PrepareArrow", 2f);
     }
-
     private void Aim()
     {
         facingDirection = cameraX.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -107,7 +115,6 @@ public class ArcherPlayerController : MonoBehaviour
             myAnimator.SetBool(ATTACKING_STATE, true);
         }
     }
-
     public void Fire()
     {
         arrowReady = false;
@@ -117,33 +124,34 @@ public class ArcherPlayerController : MonoBehaviour
         arrowShot.transform.parent = this.transform;
         myAnimator.SetBool(ATTACKING_STATE, false);
     }
-
     public void PrepareArrow()
     {
         arrowReady = true;
     }
-
     public void PlayerDied()
     {
         mySprite.enabled = false;
         myCollider.enabled = false;
         Destroy(gameObject);
     }
-
     public void PlayerFalling()
     {
         isAlive = false;
     }
-
     public void IncreaseAttackSpeed()
     {
         if (attackSpeed < 1)
             attackSpeed += 0.1f;
-        myAnimator.SetFloat(ATTACKING_SPEED, attackSpeed);
+        myAnimator.SetFloat(ATTACKING_SPEED_ANIM, attackSpeed);
     }
-
-    public void UpdateRunSpeed(float newRunSpeed) { runSpeed = newRunSpeed; }
-    public void UpdateAttackSpeed(float newAttackSpeed) { attackSpeed = newAttackSpeed; }
+    public void UpdateRunSpeed(float newRunSpeed) 
+    { 
+        runSpeed = newRunSpeed; 
+    }
+    public void UpdateAttackSpeed(float newAttackSpeed) 
+    { 
+        attackSpeed = newAttackSpeed; 
+    }
 
 
 }
