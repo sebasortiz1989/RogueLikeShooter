@@ -132,14 +132,8 @@ public class ArcherPlayerController : MonoBehaviour
     {
         mySprite.enabled = false;
         myCollider.enabled = false;
-        Destroy(gameObject);
-        StartCoroutine(LoadGameOver());
-    }
-
-    IEnumerator LoadGameOver()
-    {
-        yield return new WaitForSeconds(3f);
         FindObjectOfType<SceneManagement>().LoadGameOver();
+        Destroy(gameObject);
     }
 
     public void PlayerFalling()

@@ -62,6 +62,12 @@ public class SceneManagement : MonoBehaviour
 
     public void LoadGameOver()
     {
+        StartCoroutine(GameOver());
+    }
+
+    IEnumerator GameOver()
+    {
+        yield return new WaitForSeconds(3f);
         SceneManager.LoadScene("XGameOverScreen");
     }
 
