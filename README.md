@@ -22,7 +22,7 @@
 
 # Game Summary
 
-<img src="images/screenshot.png" width="300">
+<img src="images/screenshot.PNG" width="300">
 
 I developed thsi game specifically for a game jam organized by [Platzi](https://www.platzi.com) and was released in [itch.io](https://sebasortiz.itch.io/platziolimpics-roguelike-shooter) for the same purpose.
 
@@ -44,9 +44,9 @@ I developed thsi game specifically for a game jam organized by [Platzi](https://
 # Visual Style
 2D Retro
 
-<img src="images/screenshot1.png" width="500">
+<img src="images/screenshot1.PNG" width="500">
 
-<img src="images/screenshot2.png" width="500">
+<img src="images/screenshot2.PNG" width="500">
 
 # Player Objectives
 - You control an archer and shoot warriors as they come to attack you.
