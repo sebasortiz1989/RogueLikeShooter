@@ -6,6 +6,7 @@ public class ProceduralMapGeneration : MonoBehaviour
 {
     // Config
     [SerializeField] GameObject[] maps;
+    [SerializeField] BoxCollider2D limitCollider;
 
     // Initialize Variables
     Vector2 rightSide = new Vector2(1, 0);
@@ -55,25 +56,37 @@ public class ProceduralMapGeneration : MonoBehaviour
 
     public void GenerateUpMap()
     {
-        GameObject mapClone = Instantiate(maps[Random.Range(0, maps.Length)], currentStandingMap + (Vector3)upSide, Quaternion.identity);
-        mapClone.transform.parent = mapsParent.transform;
+        if (Mathf.Abs((currentStandingMap + (Vector3)upSide).y) < limitCollider.size.y-18)
+        {
+            GameObject mapClone = Instantiate(maps[Random.Range(0, maps.Length)], currentStandingMap + (Vector3)upSide, Quaternion.identity);
+            mapClone.transform.parent = mapsParent.transform;
+        }
     }
 
     public void GenerateDownMap()
     {
-        GameObject mapClone = Instantiate(maps[Random.Range(0, maps.Length)], currentStandingMap + (Vector3)downSide, Quaternion.identity);
-        mapClone.transform.parent = mapsParent.transform;
+        if (Mathf.Abs((currentStandingMap + (Vector3)downSide).y) < limitCollider.size.y-18)
+        {
+            GameObject mapClone = Instantiate(maps[Random.Range(0, maps.Length)], currentStandingMap + (Vector3)downSide, Quaternion.identity);
+            mapClone.transform.parent = mapsParent.transform;
+        }
     }
 
     public void GenerateLeftMap()
     {
-        GameObject mapClone = Instantiate(maps[Random.Range(0, maps.Length)], currentStandingMap + (Vector3)leftSide, Quaternion.identity);
-        mapClone.transform.parent = mapsParent.transform;
+        if (Mathf.Abs((currentStandingMap + (Vector3)leftSide).x) < limitCollider.size.x-23)
+        {
+            GameObject mapClone = Instantiate(maps[Random.Range(0, maps.Length)], currentStandingMap + (Vector3)leftSide, Quaternion.identity);
+            mapClone.transform.parent = mapsParent.transform;
+        }
     }
 
     public void GenerateRightMap()
     {
-        GameObject mapClone = Instantiate(maps[Random.Range(0, maps.Length)], currentStandingMap + (Vector3)rightSide, Quaternion.identity);
-        mapClone.transform.parent = mapsParent.transform;
+        if (Mathf.Abs((currentStandingMap + (Vector3)rightSide).x) < limitCollider.size.x-23)
+        {
+            GameObject mapClone = Instantiate(maps[Random.Range(0, maps.Length)], currentStandingMap + (Vector3)rightSide, Quaternion.identity);
+            mapClone.transform.parent = mapsParent.transform;
+        }
     }
 }

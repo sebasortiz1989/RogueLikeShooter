@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CharacterStats : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class CharacterStats : MonoBehaviour
 
     private void Start()
     {
-        if (statsSet)
+        if (statsSet && SceneManager.GetActiveScene().buildIndex == 2)
         {
             GetCurrentvalues();
         }
@@ -71,8 +72,8 @@ public class CharacterStats : MonoBehaviour
         PlayerPrefs.SetInt(PLAYERDAMAGE, (int)playerDamageBar.value);
         PlayerPrefs.SetFloat(ATTACKSPEED, attackSpeedBar.value);
         PlayerPrefs.SetInt(CRITCHANCE, (int)critChanceBar.value);
-        PlayerPrefs.SetInt(ENEMYHP, 100);
-        PlayerPrefs.SetInt(ENEMYDAMAGE, 10);
+        PlayerPrefs.SetInt(ENEMYHP, (int)enemyHPBar.value);
+        PlayerPrefs.SetInt(ENEMYDAMAGE, (int)enemyDamageBar.value);
         statsSet = true;
     }
 

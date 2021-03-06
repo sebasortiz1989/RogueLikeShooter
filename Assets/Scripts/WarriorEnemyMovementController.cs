@@ -53,8 +53,8 @@ public class WarriorEnemyMovementController : MonoBehaviour
         WalkingMovement();
         RunningMovement();
         AnimationChanges();
-        EnemyHealthBar();
         FreezeConstraints();
+        //EnemyHealthBar();
     }
 
     private void FreezeConstraints()
