@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>Platzi Olimpics - The Game Of Truth</h1>
+  <h1>Platzi Olimpics - The Game Of Truth - RogueLike Shooter</h1>
 </div>
 
 <div align="center"> 
@@ -7,16 +7,10 @@
 </div>
 
 **Table of content**
-- [Websites](#websites)
-  - [Assets](#assets)
 - [Game Summary](#game-summary)
-  - [Requirements:](#requirements)
-  - [Bonus points:](#bonus-points)
 - [Characteristics](#characteristics)
 - [Visual Style](#visual-style)
 - [Player Objectives](#player-objectives)
-
-# Websites
 
 ## Assets
 
@@ -28,23 +22,9 @@
 
 # Game Summary
 
-<img src="images/logo1.png" width="200">
+<img src="images/screenshot.png" width="300">
 
-## Requirements:
-
-- Topic: Que es la realidad?
-- Mix two genres: plataform, roguelike, rítmico, sim, shooter, runner y puzzle.
-- Must have: Initial screen, credits and controls
-- Mouse and keyboard controls
-
-## Bonus points:
-- Configurable controls
-- Adjust difficulty
-- Colorblind mode
-- Adjust text size
-- Character selection
-- The video game is in english
-- Gamepad support
+I developed thsi game specifically for a game jam organized by [Platzi](https://www.platzi.com) and was released in [itch.io](https://sebasortiz.itch.io/platziolimpics-roguelike-shooter) for the same purpose.
 
 **Common Information**
 
@@ -52,25 +32,25 @@
 **Genre:** 2D Roguelike - Shooter <br>
 **Engine:** Unity <br>
 **Release Platform:** PC, WebGL <br>
-**Release Store:** itch.io <br>
+**Release Store:** [itch.io](https://sebasortiz.itch.io/platziolimpics-roguelike-shooter)  <br>
 
 # Characteristics
 
-- To create the level we are using procedural level generation based on the class: https://platzi.com/clases/1413-desarrollo-unity/14930-generacion-procedural-de-niveles1378/
-
-- Shooter tipo cryptcreepers
-- Cada vez matemos un mob suelta un currency y mejoramos los stats. Y mejorar el arma. (Sistema de mejoras) Solo podemos mejorar las cosas cuando morimos y estamos en el lobby (Realidad 1).
-- Uno empieza en una realidad, tiene que matar enemigos, y despues de cierto punto, aparece un portal y lo lleva a la otra realidad.
-- En el lobby, aparece una imagen del humano y del monstruo, y se puede escoger cual humano y cual monstruo.
-- Al seguir la historia, el juego lo obliga a jugar con el humano y despues lo obliga a jugar con el monstruo.
-- Los humanos y monstruos tendran Barra de HP.
-- Que aparezca el damage del player al recibir dano y del enemigo al hacerle dano.
+- Being able to aim.
+- To create the level we are using procedural level generation.
+- Create an interface to tune the stats of both the player and the enemies. 
+- Fighting mechanics, animations, transitions, health bars, UI.
 
 # Visual Style
-Not defined yet
+2D Retro
 
-<img src="images/screenshot.png" width="100">
+<img src="images/screenshot1.png" width="500">
+
+<img src="images/screenshot2.png" width="500">
 
 # Player Objectives
-- a
-- b
+- You control an archer and shoot warriors as they come to attack you.
+- Pick up coins and potions dropped by enemies.
+- Experiment the game tuning the stats of the player and the enemies.
+
+<img src="images/example.gif" width="500">
